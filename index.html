@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
 }
 
 body{
-    background:#000;
+    background:#0b1120;
     color:#ffffff;
     overflow-x:hidden;
 }
@@ -29,7 +30,7 @@ body{
     width:100%;
     height:100%;
     z-index:-1;
-    opacity:0.20;   /* more visible animation */
+    opacity:0.08; /* transparent watermark */
     pointer-events:none;
 }
 
@@ -38,85 +39,90 @@ body{
     width:90%;
     max-width:1100px;
     margin:auto;
-    padding:100px 0;
+    padding:80px 0;
 }
 
 section{
     margin-bottom:80px;
     padding:40px;
-    border-radius:18px;
-    background:rgba(255,255,255,0.05); /* transparent */
-    backdrop-filter:blur(6px);
+    border-radius:16px;
+    background:rgba(15,23,42,0.75);
+    backdrop-filter:blur(12px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
 }
 
 .hero{
     text-align:center;
     padding:120px 20px;
     background:none;
+    box-shadow:none;
 }
 
 h1{
-    font-size:50px;
+    font-size:48px;
     font-weight:700;
-    letter-spacing:1px;
+    background:linear-gradient(90deg,#38bdf8,#6366f1);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .tagline{
     font-size:20px;
     margin-top:15px;
-    color:#ddd;
+    color:#94a3b8;
 }
 
 .contact{
     margin-top:25px;
     line-height:1.8;
+    color:#cbd5e1;
 }
 
 .contact a{
-    color:#00ffff;
+    color:#38bdf8;
     text-decoration:none;
 }
 
 h2{
-    font-size:28px;
+    font-size:26px;
     margin-bottom:20px;
-    border-bottom:2px solid rgba(255,255,255,0.4);
-    display:inline-block;
-    padding-bottom:5px;
+    color:#38bdf8;
+    border-left:4px solid #38bdf8;
+    padding-left:12px;
 }
 
 p, li{
     line-height:1.8;
-    font-size:17px;
+    color:#e2e8f0;
 }
 
 ul{
     margin-left:20px;
+    margin-top:10px;
 }
 
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    gap:20px;
 }
 
 .card{
-    background:rgba(255,255,255,0.06);
-    padding:25px;
-    border-radius:15px;
-    backdrop-filter:blur(5px);
+    background:rgba(30,41,59,0.8);
+    padding:20px;
+    border-radius:12px;
     transition:0.3s ease;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    background:rgba(255,255,255,0.1);
+    transform:translateY(-6px);
+    background:#1e293b;
 }
 
 footer{
     text-align:center;
     padding:40px;
-    opacity:0.7;
+    color:#64748b;
 }
 </style>
 </head>
@@ -127,6 +133,7 @@ footer{
 
 <div class="container">
 
+<!-- HERO -->
 <section class="hero">
     <h1>Rasinath Jamroon</h1>
     <p class="tagline">
@@ -140,15 +147,19 @@ footer{
     </div>
 </section>
 
+<!-- EDUCATION -->
 <section>
     <h2>Education</h2>
     <p><strong>Government College of Engineering, Tirunelveli</strong><br>
     Affiliated to Anna University<br>
-    Currently Studying Third Year (ECE)</p>
+    Currently Studying Third Year (Electronics & Communication Engineering)</p>
+
     <br>
+
     <p><strong>Meenakshi Matriculation Higher Secondary School, Tirunelveli</strong></p>
 </section>
 
+<!-- PROJECTS -->
 <section>
     <h2>Projects</h2>
     <div class="grid">
@@ -156,36 +167,37 @@ footer{
         <div class="card">
             <h3>Smart Blind Stick</h3>
             <ul>
-                <li>Used HC-SR04 ultrasonic sensors</li>
-                <li>Vibration & buzzer alerts</li>
-                <li>Arduino Uno proximity logic</li>
+                <li>Used Ultrasonic Sensors (HC-SR04) to detect nearby objects</li>
+                <li>Provided vibration feedback and buzzer alerts</li>
+                <li>Arduino Uno based proximity logic implementation</li>
             </ul>
         </div>
 
         <div class="card">
             <h3>Dessert Website Prototype</h3>
             <ul>
-                <li>Wireframing & Prototyping in Figma</li>
+                <li>Wireframing and prototyping using Figma</li>
             </ul>
         </div>
 
         <div class="card">
             <h3>E-Commerce Website</h3>
             <ul>
-                <li>Simple responsive website</li>
+                <li>Built a simple responsive E-commerce platform</li>
             </ul>
         </div>
 
         <div class="card">
             <h3>Sales Dashboard</h3>
             <ul>
-                <li>Interactive Excel dashboard</li>
+                <li>Created interactive dashboard using Microsoft Excel</li>
             </ul>
         </div>
 
     </div>
 </section>
 
+<!-- SKILLS -->
 <section>
     <h2>Skills</h2>
     <ul>
@@ -199,28 +211,31 @@ footer{
     </ul>
 </section>
 
+<!-- CERTIFICATIONS -->
 <section>
-    <h2>Certifications</h2>
+    <h2>Certifications & Additional</h2>
     <ul>
         <li>Google UX Design Professional Certificate</li>
-        <li>Coursera Project Network Certified – Excel Functions</li>
-        <li>NPTEL – Introduction to IoT</li>
-        <li>Webinar – Elewayte Professional Counselling</li>
+        <li>Coursera Project Network Certified – Using Basic Functions and Formulas in Microsoft Excel</li>
+        <li>NPTEL Certificate – Introduction to IoT</li>
+        <li>Attended Webinar in Elewayte Professional Counselling</li>
     </ul>
 </section>
 
+<!-- LANGUAGES -->
 <section>
     <h2>Languages</h2>
     <p>English, Tamil</p>
 </section>
 
+<!-- HOBBIES -->
 <section>
     <h2>Hobbies</h2>
-    <p>Reading Books, Watching Movies, Arts, Painting & Drawing</p>
+    <p>Reading Books, Watching Movies, Arts, Painting and Drawing</p>
 </section>
 
 <footer>
-© 2026 Rasinath Jamroon
+    © 2026 Rasinath Jamroon | Portfolio
 </footer>
 
 </div>
@@ -237,25 +252,32 @@ function resizeCanvas(){
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-const currentFrame = (index) =>
-  `frames/ezgif-frame-${String(index).padStart(3,'0')}.jpg`;
+const currentFrame = (index) => 
+    `frames/ezgif-frame-${String(index).padStart(3,'0')}.jpg`;
 
-let img = new Image();
-img.src = currentFrame(1);
+const images = [];
+for(let i=1;i<=frameCount;i++){
+    const img = new Image();
+    img.src = currentFrame(i);
+    images.push(img);
+}
+
+let currentImage = new Image();
+currentImage.src = currentFrame(1);
 
 function render(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    ctx.drawImage(currentImage,0,0,canvas.width,canvas.height);
 }
 
-img.onload = render;
+currentImage.onload = render;
 
 window.addEventListener("scroll",()=>{
     const scrollTop = document.documentElement.scrollTop;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const scrollFraction = scrollTop / maxScroll;
     const frameIndex = Math.min(frameCount-1, Math.floor(scrollFraction * frameCount));
-    img.src = currentFrame(frameIndex+1);
+    currentImage.src = currentFrame(frameIndex+1);
 });
 </script>
 
