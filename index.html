@@ -5,274 +5,278 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rasinath Jamroon | Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family: 'Segoe UI', sans-serif;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-    body{
-        background:#0f172a;
-        color:#ffffff;
-        overflow-x:hidden;
-    }
+body{
+    background:#0b1120;
+    color:#ffffff;
+    overflow-x:hidden;
+}
 
-    /* Background Canvas */
-    #animationCanvas{
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        z-index:-1;
-        opacity:0.12; /* watermark transparency */
-        pointer-events:none;
-    }
+/* ===== Scroll Animation Canvas ===== */
+#bgCanvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity:0.08; /* transparent watermark */
+    pointer-events:none;
+}
 
-    /* Content Wrapper */
-    .container{
-        width:85%;
-        max-width:1100px;
-        margin:auto;
-        padding:60px 0;
-    }
+/* ===== Layout ===== */
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:80px 0;
+}
 
-    section{
-        margin-bottom:80px;
-        background:rgba(15,23,42,0.75);
-        padding:40px;
-        border-radius:15px;
-        backdrop-filter: blur(10px);
-        box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    }
+section{
+    margin-bottom:80px;
+    padding:40px;
+    border-radius:16px;
+    background:rgba(15,23,42,0.75);
+    backdrop-filter:blur(12px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
 
-    h1{
-        font-size:40px;
-        margin-bottom:10px;
-        background:linear-gradient(90deg,#00c6ff,#0072ff);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-    }
+.hero{
+    text-align:center;
+    padding:120px 20px;
+    background:none;
+    box-shadow:none;
+}
 
-    h2{
-        margin-bottom:20px;
-        color:#38bdf8;
-        border-bottom:2px solid #38bdf8;
-        display:inline-block;
-        padding-bottom:5px;
-    }
+h1{
+    font-size:48px;
+    font-weight:700;
+    background:linear-gradient(90deg,#38bdf8,#6366f1);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-    p, li{
-        line-height:1.7;
-        font-size:17px;
-        margin-bottom:10px;
-        color:#e2e8f0;
-    }
+.tagline{
+    font-size:20px;
+    margin-top:15px;
+    color:#94a3b8;
+}
 
-    ul{
-        margin-left:20px;
-    }
+.contact{
+    margin-top:25px;
+    line-height:1.8;
+    color:#cbd5e1;
+}
 
-    .hero{
-        text-align:center;
-        padding-top:120px;
-        padding-bottom:120px;
-        background:none;
-        box-shadow:none;
-    }
+.contact a{
+    color:#38bdf8;
+    text-decoration:none;
+}
 
-    .tagline{
-        font-size:20px;
-        margin-top:15px;
-        color:#94a3b8;
-    }
+h2{
+    font-size:26px;
+    margin-bottom:20px;
+    color:#38bdf8;
+    border-left:4px solid #38bdf8;
+    padding-left:12px;
+}
 
-    .contact a{
-        color:#38bdf8;
-        text-decoration:none;
-    }
+p, li{
+    line-height:1.8;
+    color:#e2e8f0;
+}
 
-    .grid{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-        gap:20px;
-    }
+ul{
+    margin-left:20px;
+    margin-top:10px;
+}
 
-    .card{
-        background:rgba(30,41,59,0.8);
-        padding:20px;
-        border-radius:10px;
-        transition:0.3s;
-    }
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 
-    .card:hover{
-        transform:translateY(-5px);
-        background:#1e293b;
-    }
+.card{
+    background:rgba(30,41,59,0.8);
+    padding:20px;
+    border-radius:12px;
+    transition:0.3s ease;
+}
 
-    footer{
-        text-align:center;
-        padding:40px 0;
-        color:#64748b;
-    }
+.card:hover{
+    transform:translateY(-6px);
+    background:#1e293b;
+}
 
+footer{
+    text-align:center;
+    padding:40px;
+    color:#64748b;
+}
 </style>
 </head>
+
 <body>
 
-<canvas id="animationCanvas"></canvas>
+<canvas id="bgCanvas"></canvas>
 
 <div class="container">
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1>Rasinath Jamroon</h1>
-        <p class="tagline">
-            Electronics & Communication Student Passionate About Hardware Integration and Software Development
-        </p>
-        <p class="contact">
-            📍 95A, MGP Sannathi Street, Pettai, Tirunelveli <br>
-            📞 7418002264 <br>
-            📧 <a href="mailto:rasinathjamroon2006@gmail.com">rasinathjamroon2006@gmail.com</a> <br>
-            🔗 <a href="https://in.linkedin.com/in/rasinath-jamroon-a-21582a326" target="_blank">LinkedIn Profile</a>
-        </p>
-    </section>
+<!-- HERO -->
+<section class="hero">
+    <h1>Rasinath Jamroon</h1>
+    <p class="tagline">
+        Electronics & Communication Student Passionate About Hardware Integration and Software Development
+    </p>
+    <div class="contact">
+        📍 95A, MGP Sannathi Street, Pettai, Tirunelveli<br>
+        📞 7418002264<br>
+        📧 <a href="mailto:rasinathjamroon2006@gmail.com">rasinathjamroon2006@gmail.com</a><br>
+        🔗 <a href="https://in.linkedin.com/in/rasinath-jamroon-a-21582a326" target="_blank">LinkedIn Profile</a>
+    </div>
+</section>
 
-    <!-- EDUCATION -->
-    <section>
-        <h2>Education</h2>
-        <p><strong>Government College of Engineering, Tirunelveli</strong><br>
-        Affiliated to Anna University<br>
-        Currently Studying Third Year (Electronics & Communication Engineering)</p>
+<!-- EDUCATION -->
+<section>
+    <h2>Education</h2>
+    <p><strong>Government College of Engineering, Tirunelveli</strong><br>
+    Affiliated to Anna University<br>
+    Currently Studying Third Year (Electronics & Communication Engineering)</p>
 
-        <p><strong>Meenakshi Matriculation Higher Secondary School, Tirunelveli</strong></p>
-    </section>
+    <br>
 
-    <!-- PROJECTS -->
-    <section>
-        <h2>Projects</h2>
+    <p><strong>Meenakshi Matriculation Higher Secondary School, Tirunelveli</strong></p>
+</section>
 
-        <div class="grid">
-            <div class="card">
-                <h3>Smart Blind Stick</h3>
-                <ul>
-                    <li>Used Ultrasonic Sensors (HC-SR04) to detect nearby obstacles</li>
-                    <li>Provided vibration feedback & buzzer alerts</li>
-                    <li>Arduino Uno based proximity logic</li>
-                </ul>
-            </div>
+<!-- PROJECTS -->
+<section>
+    <h2>Projects</h2>
+    <div class="grid">
 
-            <div class="card">
-                <h3>Dessert Website Prototype</h3>
-                <ul>
-                    <li>Wireframing & Prototyping using Figma</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>E-commerce Website</h3>
-                <ul>
-                    <li>Built a simple responsive E-commerce platform</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Sales Dashboard</h3>
-                <ul>
-                    <li>Created interactive dashboard using Microsoft Excel</li>
-                </ul>
-            </div>
+        <div class="card">
+            <h3>Smart Blind Stick</h3>
+            <ul>
+                <li>Used Ultrasonic Sensors (HC-SR04) to detect nearby objects</li>
+                <li>Provided vibration feedback and buzzer alerts</li>
+                <li>Arduino Uno based proximity logic implementation</li>
+            </ul>
         </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Python Programming</li>
-            <li>C Programming</li>
-            <li>UX Design</li>
-            <li>Web Development</li>
-            <li>Figma</li>
-            <li>Microsoft Excel</li>
-            <li>Internet of Things (IoT)</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h3>Dessert Website Prototype</h3>
+            <ul>
+                <li>Wireframing and prototyping using Figma</li>
+            </ul>
+        </div>
 
-    <!-- CERTIFICATIONS -->
-    <section>
-        <h2>Certifications & Additional</h2>
-        <ul>
-            <li>Google UX Design Professional Certificate</li>
-            <li>Coursera Project Network Certified – Using Basic Functions and Formulas in Microsoft Excel</li>
-            <li>NPTEL Certificate – Introduction to IoT</li>
-            <li>Attended Webinar in Elewayte Professional Counselling</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h3>E-Commerce Website</h3>
+            <ul>
+                <li>Built a simple responsive E-commerce platform</li>
+            </ul>
+        </div>
 
-    <!-- LANGUAGES -->
-    <section>
-        <h2>Languages</h2>
-        <p>English, Tamil</p>
-    </section>
+        <div class="card">
+            <h3>Sales Dashboard</h3>
+            <ul>
+                <li>Created interactive dashboard using Microsoft Excel</li>
+            </ul>
+        </div>
 
-    <!-- HOBBIES -->
-    <section>
-        <h2>Hobbies</h2>
-        <p>Reading Books, Watching Movies, Arts Painting and Drawing</p>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        © 2026 Rasinath Jamroon | Portfolio
-    </footer>
+<!-- SKILLS -->
+<section>
+    <h2>Skills</h2>
+    <ul>
+        <li>Python Programming</li>
+        <li>C Programming</li>
+        <li>UX Design</li>
+        <li>Web Development</li>
+        <li>Figma</li>
+        <li>Microsoft Excel</li>
+        <li>Internet of Things (IoT)</li>
+    </ul>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section>
+    <h2>Certifications & Additional</h2>
+    <ul>
+        <li>Google UX Design Professional Certificate</li>
+        <li>Coursera Project Network Certified – Using Basic Functions and Formulas in Microsoft Excel</li>
+        <li>NPTEL Certificate – Introduction to IoT</li>
+        <li>Attended Webinar in Elewayte Professional Counselling</li>
+    </ul>
+</section>
+
+<!-- LANGUAGES -->
+<section>
+    <h2>Languages</h2>
+    <p>English, Tamil</p>
+</section>
+
+<!-- HOBBIES -->
+<section>
+    <h2>Hobbies</h2>
+    <p>Reading Books, Watching Movies, Arts, Painting and Drawing</p>
+</section>
+
+<footer>
+    © 2026 Rasinath Jamroon | Portfolio
+</footer>
 
 </div>
 
 <script>
 const frameCount = 240;
-const canvas = document.getElementById("animationCanvas");
-const context = canvas.getContext("2d");
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
-const currentFrame = index => 
-  `frames/ezgif-frame-${String(index).padStart(3, '0')}.jpg`;
+const currentFrame = (index) => 
+    `frames/ezgif-frame-${String(index).padStart(3,'0')}.jpg`;
 
 const images = [];
-const imageObj = new Image();
-
-for (let i = 1; i <= frameCount; i++) {
+for(let i=1;i<=frameCount;i++){
     const img = new Image();
     img.src = currentFrame(i);
     images.push(img);
 }
 
+let currentImage = new Image();
+currentImage.src = currentFrame(1);
+
 function render(){
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(imageObj, 0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(currentImage,0,0,canvas.width,canvas.height);
 }
 
-imageObj.onload = render;
-imageObj.src = currentFrame(1);
+currentImage.onload = render;
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll",()=>{
     const scrollTop = document.documentElement.scrollTop;
-    const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollFraction = scrollTop / maxScrollTop;
-    const frameIndex = Math.min(
-        frameCount - 1,
-        Math.ceil(scrollFraction * frameCount)
-    );
-
-    imageObj.src = currentFrame(frameIndex + 1);
-});
-
-window.addEventListener("resize",()=>{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = scrollTop / maxScroll;
+    const frameIndex = Math.min(frameCount-1, Math.floor(scrollFraction * frameCount));
+    currentImage.src = currentFrame(frameIndex+1);
 });
 </script>
 
