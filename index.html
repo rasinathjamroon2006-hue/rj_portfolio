@@ -1,16 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Scrollable Frame Animation</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rasinath Jamroon | Portfolio</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+        background:#0f172a;
+        color:#ffffff;
+        overflow-x:hidden;
+    }
+
+    /* Background Canvas */
+    #animationCanvas{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:-1;
+        opacity:0.12; /* watermark transparency */
+        pointer-events:none;
+    }
+
+    /* Content Wrapper */
+    .container{
+        width:85%;
+        max-width:1100px;
+        margin:auto;
+        padding:60px 0;
+    }
+
+    section{
+        margin-bottom:80px;
+        background:rgba(15,23,42,0.75);
+        padding:40px;
+        border-radius:15px;
+        backdrop-filter: blur(10px);
+        box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h1{
+        font-size:40px;
+        margin-bottom:10px;
+        background:linear-gradient(90deg,#00c6ff,#0072ff);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+    }
+
+    h2{
+        margin-bottom:20px;
+        color:#38bdf8;
+        border-bottom:2px solid #38bdf8;
+        display:inline-block;
+        padding-bottom:5px;
+    }
+
+    p, li{
+        line-height:1.7;
+        font-size:17px;
+        margin-bottom:10px;
+        color:#e2e8f0;
+    }
+
+    ul{
+        margin-left:20px;
+    }
+
+    .hero{
+        text-align:center;
+        padding-top:120px;
+        padding-bottom:120px;
+        background:none;
+        box-shadow:none;
+    }
+
+    .tagline{
+        font-size:20px;
+        margin-top:15px;
+        color:#94a3b8;
+    }
+
+    .contact a{
+        color:#38bdf8;
+        text-decoration:none;
+    }
+
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:20px;
+    }
+
+    .card{
+        background:rgba(30,41,59,0.8);
+        padding:20px;
+        border-radius:10px;
+        transition:0.3s;
+    }
+
+    .card:hover{
+        transform:translateY(-5px);
+        background:#1e293b;
+    }
+
+    footer{
+        text-align:center;
+        padding:40px 0;
+        color:#64748b;
+    }
+
+</style>
 </head>
 <body>
 
-    <div class="scroll-container">
-        <canvas id="frameCanvas"></canvas>
-    </div>
+<canvas id="animationCanvas"></canvas>
 
-    <script src="script.js"></script>
+<div class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Rasinath Jamroon</h1>
+        <p class="tagline">
+            Electronics & Communication Student Passionate About Hardware Integration and Software Development
+        </p>
+        <p class="contact">
+            📍 95A, MGP Sannathi Street, Pettai, Tirunelveli <br>
+            📞 7418002264 <br>
+            📧 <a href="mailto:rasinathjamroon2006@gmail.com">rasinathjamroon2006@gmail.com</a> <br>
+            🔗 <a href="https://in.linkedin.com/in/rasinath-jamroon-a-21582a326" target="_blank">LinkedIn Profile</a>
+        </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+        <h2>Education</h2>
+        <p><strong>Government College of Engineering, Tirunelveli</strong><br>
+        Affiliated to Anna University<br>
+        Currently Studying Third Year (Electronics & Communication Engineering)</p>
+
+        <p><strong>Meenakshi Matriculation Higher Secondary School, Tirunelveli</strong></p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+        <h2>Projects</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Smart Blind Stick</h3>
+                <ul>
+                    <li>Used Ultrasonic Sensors (HC-SR04) to detect nearby obstacles</li>
+                    <li>Provided vibration feedback & buzzer alerts</li>
+                    <li>Arduino Uno based proximity logic</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Dessert Website Prototype</h3>
+                <ul>
+                    <li>Wireframing & Prototyping using Figma</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>E-commerce Website</h3>
+                <ul>
+                    <li>Built a simple responsive E-commerce platform</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Sales Dashboard</h3>
+                <ul>
+                    <li>Created interactive dashboard using Microsoft Excel</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>Python Programming</li>
+            <li>C Programming</li>
+            <li>UX Design</li>
+            <li>Web Development</li>
+            <li>Figma</li>
+            <li>Microsoft Excel</li>
+            <li>Internet of Things (IoT)</li>
+        </ul>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section>
+        <h2>Certifications & Additional</h2>
+        <ul>
+            <li>Google UX Design Professional Certificate</li>
+            <li>Coursera Project Network Certified – Using Basic Functions and Formulas in Microsoft Excel</li>
+            <li>NPTEL Certificate – Introduction to IoT</li>
+            <li>Attended Webinar in Elewayte Professional Counselling</li>
+        </ul>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section>
+        <h2>Languages</h2>
+        <p>English, Tamil</p>
+    </section>
+
+    <!-- HOBBIES -->
+    <section>
+        <h2>Hobbies</h2>
+        <p>Reading Books, Watching Movies, Arts Painting and Drawing</p>
+    </section>
+
+    <footer>
+        © 2026 Rasinath Jamroon | Portfolio
+    </footer>
+
+</div>
+
+<script>
+const frameCount = 240;
+const canvas = document.getElementById("animationCanvas");
+const context = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const currentFrame = index => 
+  `frames/ezgif-frame-${String(index).padStart(3, '0')}.jpg`;
+
+const images = [];
+const imageObj = new Image();
+
+for (let i = 1; i <= frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    images.push(img);
+}
+
+function render(){
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(imageObj, 0, 0, canvas.width, canvas.height);
+}
+
+imageObj.onload = render;
+imageObj.src = currentFrame(1);
+
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = scrollTop / maxScrollTop;
+    const frameIndex = Math.min(
+        frameCount - 1,
+        Math.ceil(scrollFraction * frameCount)
+    );
+
+    imageObj.src = currentFrame(frameIndex + 1);
+});
+
+window.addEventListener("resize",()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
 </body>
 </html>
