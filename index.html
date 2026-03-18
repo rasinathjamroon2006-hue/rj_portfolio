@@ -29,7 +29,7 @@ body{
     width:100%;
     height:100%;
     z-index:-1;
-    opacity:0.15; /* increased visibility */
+    opacity:0.3; /* more visible */
     pointer-events:none;
 }
 
@@ -41,18 +41,20 @@ body{
     padding:80px 0;
 }
 
-/* ===== Glass Sections ===== */
+/* ===== ULTRA GLASS EFFECT ===== */
 section{
     margin-bottom:80px;
     padding:40px;
     border-radius:16px;
-    background: rgba(255,255,255,0.05); /* transparent glass */
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    background: rgba(255,255,255,0.03); /* very transparent */
+    border: 1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 
-/* ===== Hero ===== */
+/* ===== HERO ===== */
 .hero{
     text-align:center;
     padding:120px 20px;
@@ -71,13 +73,13 @@ h1{
 .tagline{
     font-size:20px;
     margin-top:15px;
-    color:#94a3b8;
+    color: rgba(255,255,255,0.75);
 }
 
 .contact{
     margin-top:25px;
     line-height:1.8;
-    color:#cbd5e1;
+    color:#ffffff;
 }
 
 .contact a{
@@ -85,7 +87,7 @@ h1{
     text-decoration:none;
 }
 
-/* ===== Section Headings ===== */
+/* ===== HEADINGS ===== */
 h2{
     font-size:26px;
     margin-bottom:20px;
@@ -94,10 +96,10 @@ h2{
     padding-left:12px;
 }
 
-/* ===== Text ===== */
+/* ===== TEXT ===== */
 p, li{
     line-height:1.8;
-    color: rgba(226,232,240,0.9);
+    color: rgba(255,255,255,0.95);
 }
 
 ul{
@@ -105,32 +107,32 @@ ul{
     margin-top:10px;
 }
 
-/* ===== Grid ===== */
+/* ===== GRID ===== */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
-/* ===== Cards ===== */
+/* ===== CARDS ===== */
 .card{
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.1);
     padding:20px;
     border-radius:12px;
     transition:0.3s ease;
-    border:1px solid rgba(255,255,255,0.08);
 }
 
 .card:hover{
     transform:translateY(-6px);
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.06);
 }
 
-/* ===== Footer ===== */
+/* ===== FOOTER ===== */
 footer{
     text-align:center;
     padding:40px;
-    color:#64748b;
+    color:#aaaaaa;
 }
 </style>
 </head>
@@ -148,10 +150,10 @@ footer{
         Electronics & Communication Student Passionate About Hardware Integration and Software Development
     </p>
     <div class="contact">
-        📍 95A, MGP Sannathi Street, Pettai, Tirunelveli<br>
+        📍 Tirunelveli<br>
         📞 7418002264<br>
         📧 <a href="mailto:rasinathjamroon2006@gmail.com">rasinathjamroon2006@gmail.com</a><br>
-        🔗 <a href="https://in.linkedin.com/in/rasinath-jamroon-a-21582a326" target="_blank">LinkedIn Profile</a>
+        🔗 <a href="https://in.linkedin.com/" target="_blank">LinkedIn Profile</a>
     </div>
 </section>
 
@@ -160,9 +162,7 @@ footer{
     <h2>Education</h2>
     <p><strong>Government College of Engineering, Tirunelveli</strong><br>
     Affiliated to Anna University<br>
-    Currently Studying Third Year (Electronics & Communication Engineering)</p>
-    <br>
-    <p><strong>Meenakshi Matriculation Higher Secondary School, Tirunelveli</strong></p>
+    Third Year – Electronics & Communication Engineering</p>
 </section>
 
 <!-- PROJECTS -->
@@ -173,14 +173,14 @@ footer{
         <div class="card">
             <h3>Smart Blind Stick</h3>
             <ul>
-                <li>Used Ultrasonic Sensors (HC-SR04)</li>
-                <li>Vibration + buzzer alerts</li>
+                <li>Ultrasonic sensors for obstacle detection</li>
+                <li>Vibration & buzzer alerts</li>
                 <li>Arduino Uno implementation</li>
             </ul>
         </div>
 
         <div class="card">
-            <h3>Dessert Website Prototype</h3>
+            <h3>Dessert Website</h3>
             <ul>
                 <li>Designed using Figma</li>
             </ul>
@@ -207,24 +207,13 @@ footer{
 <section>
     <h2>Skills</h2>
     <ul>
-        <li>Python Programming</li>
-        <li>C Programming</li>
+        <li>Python</li>
+        <li>C</li>
         <li>UX Design</li>
         <li>Web Development</li>
         <li>Figma</li>
-        <li>Microsoft Excel</li>
-        <li>Internet of Things (IoT)</li>
-    </ul>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section>
-    <h2>Certifications & Additional</h2>
-    <ul>
-        <li>Google UX Design Certificate</li>
-        <li>Coursera Excel Certificate</li>
-        <li>NPTEL – Introduction to IoT</li>
-        <li>Elewayte Webinar</li>
+        <li>Excel</li>
+        <li>IoT</li>
     </ul>
 </section>
 
@@ -241,7 +230,7 @@ footer{
 </section>
 
 <footer>
-    © 2026 Rasinath Jamroon | Portfolio
+    © 2026 Rasinath Jamroon
 </footer>
 
 </div>
@@ -260,13 +249,6 @@ window.addEventListener("resize", resizeCanvas);
 
 const currentFrame = (index) =>
     `frames/ezgif-frame-${String(index).padStart(3,'0')}.jpg`;
-
-const images = [];
-for(let i=1;i<=frameCount;i++){
-    const img = new Image();
-    img.src = currentFrame(i);
-    images.push(img);
-}
 
 let currentImage = new Image();
 currentImage.src = currentFrame(1);
